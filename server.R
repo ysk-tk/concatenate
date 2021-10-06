@@ -39,5 +39,12 @@ server <- function(input, output, session) {
         
         text <- paste (text, M, sep = " ")
         text <- paste (text, ":", sep = "")})
+
     
+    autoInvalidate <- reactiveTimer(10000)
+    observe({
+        autoInvalidate()
+        cat(".")
+    })
+        
 }
